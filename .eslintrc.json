@@ -1,0 +1,40 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "extends":  [
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint"
+  ],
+  "rules": { // 0 = off, 1 = warn, 2 = error
+    "@typescript-eslint/explicit-function-return-type": [1, {
+      "allowExpressions": true, // only for test files
+      "allowTypedFunctionExpressions": true
+    }],
+    "@typescript-eslint/indent": [2, 2],
+    "comma-dangle": [2, "always-multiline"],
+    "no-multi-spaces": 1,
+    "no-param-reassign": [2, { "props": false }],
+//  "operator-linebreak": [2, "after", { "overrides": { "?": "before", ":": "before" } }],
+    "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
+    "react/jsx-one-expression-per-line": [2, { "allow": "single-child" }]
+  }
+}
